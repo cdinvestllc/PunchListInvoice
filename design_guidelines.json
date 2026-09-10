@@ -1,0 +1,209 @@
+{
+  "project_name": "Quote Flow Secure SaaS Clone + Professional Profiles",
+  "app_type": "hybrid_fullstack saas_app dashboard",
+  "design_archetype": "Utilitarian Professional SaaS (Clean, High-Density, Trust-Driven)",
+  "color_palette": {
+    "primary": {
+      "main": "#2563EB",
+      "hover": "#1D4ED8",
+      "light": "#EFF6FF",
+      "dark": "#1E40AF",
+      "contrastText": "#FFFFFF"
+    },
+    "secondary": {
+      "main": "#0F172A",
+      "hover": "#1E293B",
+      "light": "#334155",
+      "contrastText": "#FFFFFF"
+    },
+    "accent": {
+      "sky": "#0284C7",
+      "emerald": "#10B981",
+      "amber": "#F59E0B",
+      "rose": "#EF4444",
+      "indigo": "#6366F1"
+    },
+    "neutrals": {
+      "bg_app": "#F8FAFC",
+      "bg_surface": "#FFFFFF",
+      "bg_sidebar": "#0F172A",
+      "bg_banner": "#EFF6FF",
+      "border": "#E2E8F0",
+      "border_dark": "#334155",
+      "text_primary": "#0F172A",
+      "text_secondary": "#475569",
+      "text_muted": "#64748B",
+      "text_light": "#F8FAFC"
+    },
+    "status": {
+      "draft": { "bg": "#F1F5F9", "text": "#475569", "border": "#CBD5E1" },
+      "new": { "bg": "#EFF6FF", "text": "#1D4ED8", "border": "#93C5FD" },
+      "sent": { "bg": "#F0F9FF", "text": "#0369A1", "border": "#7DD3FC" },
+      "contacted": { "bg": "#F5F3FF", "text": "#6D28D9", "border": "#DDD6FE" },
+      "scheduled": { "bg": "#FEF3C7", "text": "#B45309", "border": "#FDE68A" },
+      "quoted": { "bg": "#E0F2FE", "text": "#0369A1", "border": "#7DD3FC" },
+      "accepted": { "bg": "#ECFDF5", "text": "#047857", "border": "#6EE7B7" },
+      "paid": { "bg": "#D1FAE5", "text": "#065F46", "border": "#34D399" },
+      "declined": { "bg": "#FEF2F2", "text": "#B91C1C", "border": "#FCA5A5" },
+      "overdue": { "bg": "#FFF1F2", "text": "#BE123C", "border": "#FDA4AF" },
+      "completed": { "bg": "#F0FDF4", "text": "#15803D", "border": "#86EFAC" }
+    }
+  },
+  "typography": {
+    "font_family_main": "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+    "font_family_heading": "Outfit, Inter, sans-serif",
+    "font_family_mono": "JetBrains Mono, Roboto Mono, monospace",
+    "hierarchy": {
+      "h1": "text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight",
+      "h2": "text-xl sm:text-2xl font-semibold text-slate-900 tracking-tight",
+      "h3": "text-lg font-semibold text-slate-900",
+      "subtitle": "text-sm text-slate-500 font-normal",
+      "body": "text-sm text-slate-700 leading-relaxed",
+      "caption": "text-xs text-slate-500 font-medium",
+      "badge": "text-xs font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full"
+    }
+  },
+  "layout_and_structure": {
+    "sidebar": {
+      "width": "w-64",
+      "bg": "bg-slate-900",
+      "text": "text-slate-300",
+      "active_item": "bg-blue-600 text-white font-medium shadow-sm rounded-lg",
+      "hover_item": "hover:bg-slate-800 hover:text-white rounded-lg transition-colors",
+      "nav_items": ["Dashboard", "Quotes", "Invoices", "Estimate Requests", "Settings", "Upgrade", "Public Profile", "Admin"]
+    },
+    "top_notification_banner": {
+      "height": "h-12",
+      "bg": "bg-blue-50 border-b border-blue-100",
+      "text": "text-blue-900 text-xs sm:text-sm font-medium",
+      "cta": "bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-3 py-1 rounded-md shadow-sm"
+    },
+    "free_mode_banner": {
+      "bg": "bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6 shadow-sm",
+      "text": "text-amber-900 text-sm",
+      "cta": "bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold px-3 py-1.5 rounded-md"
+    },
+    "cards": {
+      "container": "bg-white rounded-xl border border-slate-200 shadow-sm p-5 sm:p-6 transition-all hover:shadow-md",
+      "flat": "bg-white rounded-xl border border-slate-200 p-5 sm:p-6",
+      "metrics": "bg-white rounded-xl border border-slate-200 p-5 flex items-center justify-between"
+    },
+    "tables": {
+      "wrapper": "overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm",
+      "header": "bg-slate-50 border-b border-slate-200 text-xs font-semibold uppercase tracking-wider text-slate-500 py-3 px-4 text-left",
+      "row": "border-b border-slate-100 hover:bg-slate-50/80 transition-colors text-sm text-slate-700",
+      "cell": "py-3.5 px-4"
+    }
+  },
+  "pages_specification": {
+    "Dashboard": {
+      "metrics_cards": [
+        { "id": "outstanding", "label": "Outstanding", "format": "currency", "color": "amber" },
+        { "id": "paid_this_month", "label": "Paid This Month", "format": "currency", "color": "emerald" },
+        { "id": "open_quotes", "label": "Open Quotes", "format": "number", "color": "blue" },
+        { "id": "overdue", "label": "Overdue", "format": "currency", "color": "rose" }
+      ],
+      "sections": ["Metrics Summary Grid", "Recent Activity Timeline/Table", "Quick Action Buttons (Create Quote, Create Invoice)"]
+    },
+    "Quotes": {
+      "list_view": {
+        "filters": ["All", "Draft", "Sent", "Accepted", "Declined"],
+        "search": "Client name, job title, quote number",
+        "actions": ["Create New Quote", "Export PDF", "Send to Client", "Convert to Invoice"]
+      },
+      "form_view": {
+        "sections": [
+          "Client Information (Name, Email, Phone, Billing Address)",
+          "Job Description & Dates (Job Title, Issue Date, Expiry Date, Service Type)",
+          "Line Items Table (Description, Qty, Unit Price, Taxable toggle, Row Total, Add/Delete Row)",
+          "Subtotal / Tax / Total Summary Box",
+          "Notes & Terms (Payment terms, warranty info, customer note)"
+        ]
+      }
+    },
+    "Invoices": {
+      "list_view": {
+        "filters": ["All", "Draft", "Sent", "Paid", "Overdue"],
+        "search": "Client name, invoice number",
+        "actions": ["Create New Invoice", "Mark as Paid", "Download PDF", "Send Reminder"]
+      },
+      "form_view": "Same structural pattern as Quotes form with Due Date & Payment Status toggle"
+    },
+    "Upgrade": {
+      "pricing_card": {
+        "price": "$9.99/month",
+        "plan_name": "Full Pro Mode",
+        "features": [
+          "Unlimited Estimates & Quotes",
+          "Unlimited Professional Invoices",
+          "Remove Platform Watermark",
+          "Custom Logo & Business Branding",
+          "Public Pro Portfolio Page (/pro/quote-invoice-pro-10)",
+          "Direct Customer Estimate Request Inbox"
+        ]
+      }
+    },
+    "Settings": {
+      "tabs": [
+        "Business Defaults (Business Name, Phone, Email, Tax Rate %, Currency, Default Terms)",
+        "Logo Upload (Drag & Drop preview + image validation)",
+        "Subscription & Mode Status"
+      ]
+    },
+    "Public_Pro_Profile": {
+      "route": "/pro/quote-invoice-pro-10",
+      "style": "Business-card style public page with digital trade portfolio",
+      "elements": [
+        "Hero Badge & Business Name + Trade Badges (Plumbing, HVAC, Electrical, Painting, Handyman)",
+        "Contact CTA & 'Request an Estimate' Modal Trigger",
+        "Portfolio Gallery (up to 8 images with zoom/preview)",
+        "Verified Reviews / Services Offered List"
+      ]
+    },
+    "Estimate_Requests": {
+      "list_columns": ["Request ID", "Customer Name", "Trade/Service", "Date Requested", "Status", "Actions"],
+      "statuses": ["New", "Contacted", "Scheduled", "Quoted", "Accepted", "Declined", "Completed"],
+      "primary_action": "Convert to Quote button (pre-fills client info and job description)"
+    },
+    "Admin_Console": {
+      "route": "/admin",
+      "tabs": [
+        "Users (Role: ADMIN, PRO Free, PRO Paid, CUSTOMER)",
+        "Trades Management",
+        "Coupons & Discounts",
+        "Platform Watermark Settings",
+        "Audit Logs & Activity"
+      ]
+    }
+  },
+  "watermark_spec": {
+    "free_mode": "Shows subtle footer mark 'Created with Quote Flow Free' on client PDFs and public previews",
+    "paid_mode": "Completely removes watermark and applies high-res Pro Logo branding"
+  },
+  "image_urls": {
+    "electrical_work": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwxfHx0cmFkZSUyMGNvbnRyYWN0b3IlMjBwbHVtYmVyJTIwZWxlY3RyaWNpYW4lMjBodmFjJTIwd29ya3xlbnwwfHx8fDE3ODkwMjIzNTh8MA&ixlib=rb-4.1.0&q=85",
+    "electrical_panel": "https://images.unsplash.com/photo-1660330589693-99889d60181e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwyfHx0cmFkZSUyMGNvbnRyYWN0b3IlMjBwbHVtYmVyJTIwZWxlY3RyaWNpYW4lMjBodmFjJTIwd29ya3xlbnwwfHx8fDE3ODkwMjIzNTh8MA&ixlib=rb-4.1.0&q=85",
+    "plumbing_pipe": "https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHwyfHxwbHVtYmVyJTIwcmVwYWlyaW5nJTIwcGlwZSUyMHNpbmslMjBwbHVtYmluZ3xlbnwwfHx8fDE3ODkwMjIzNjR8MA&ixlib=rb-4.1.0&q=85",
+    "plumbing_faucet": "https://images.unsplash.com/photo-1523413555809-0fb1d4da238d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHw0fHxwbHVtYmVyJTIwcmVwYWlyaW5nJTIwcGlwZSUyMHNpbmslMjBwbHVtYmluZ3xlbnwwfHx8fDE3ODkwMjIzNjR8MA&ixlib=rb-4.1.0&q=85",
+    "hvac_roof": "https://images.unsplash.com/photo-1642749776312-aa42ce20c9f5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxodmFjJTIwdGVjaG5pY2lhbiUyMGFpciUyMGNvbmRpdGlvbmVyJTIwc2VydmljZXxlbnwwfHx8fDE3ODkwMjIzNjR8MA&ixlib=rb-4.1.0&q=85",
+    "hvac_units": "https://images.unsplash.com/photo-1698479603408-1a66a6d9e80f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxodmFjJTIwdGVjaG5pY2lhbiUyMGFpciUyMGNvbmRpdGlvbmVyJTIwc2VydmljZXxlbnwwfHx8fDE3ODkwMjIzNjR8MA&ixlib=rb-4.1.0&q=85"
+  },
+  "testing_and_accessibility": {
+    "data_testid_rules": "All buttons, inputs, links, tabs, tables, status badges, and cards MUST have unique data-testid attributes in kebab-case format.",
+    "examples": [
+      "data-testid=\"sidebar-link-quotes\"",
+      "data-testid=\"btn-create-quote\"",
+      "data-testid=\"input-client-name\"",
+      "data-testid=\"line-item-qty-0\"",
+      "data-testid=\"btn-convert-to-quote\"",
+      "data-testid=\"banner-upgrade-cta\""
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Use pure React JS (.js / .jsx files) with standard Tailwind CSS classes.",
+    "Follow clean SaaS ergonomics: left dark sidebar navigation, white content cards, blue primary action buttons, notification banner.",
+    "Ensure responsive layout for mobile, tablet, and desktop with mobile drawer or collapsible sidebar.",
+    "Include PWA install manifest and offline-friendly UI cues.",
+    "Always place data-testid attributes on all interactive elements."
+  ]
+}
